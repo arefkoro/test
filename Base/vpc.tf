@@ -18,5 +18,5 @@ resource "ibm_is_vpc" {
 }
 
 module "ibm_is_subnet" {
-  source = "./"
+  source = "../"
 }
