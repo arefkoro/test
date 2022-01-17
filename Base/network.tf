@@ -13,7 +13,7 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-resource "ibm_is_subnet" {
+resource "ibm_is_subnet" "ibm_is_subnet" {
   name                      = "terraform-test-subnet"
   vpc                       = ibm_is_vpc.iac_test_vpc.id
   zone                      = "eu-de-1"
