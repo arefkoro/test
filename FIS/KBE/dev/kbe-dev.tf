@@ -14,9 +14,9 @@ provider "ibm" {
 }
 
 module "vpc" {
-  source = "../../../Base/"
+  source = "../../../Base/vpc.tf"
 }
 
 module "instance" {
-  source = "../../../Base/"
+  source = "../../../Base/image.tf"
 }
