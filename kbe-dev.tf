@@ -14,13 +14,9 @@ provider "ibm" {
 }
 
 module "ibm_is_vpc" {
-  source = "../../../Base/vpc.tf"
-}
-
-module "ibm_is_subnet" {
-  source = "../../../Base/network.tf"
+  source = "git::https://github.com/arefkoro/test"
 }
 
 module "ibm_is_instance" {
-  source = "../../../Base/image.tf"
+  source = "git::https://github.com/arefkoro/test"
 }
