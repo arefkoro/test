@@ -16,7 +16,3 @@ provider "ibm" {
 resource "ibm_is_vpc" "iac_test_vpc" {
   name = "terraform-test-vpc"
 }
-
-module "ibm_is_subnet" {
-  source = "./network.tf"
-}
