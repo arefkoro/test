@@ -13,7 +13,7 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-resource "ibm_is_instance" "iac_test_instance" {
+resource "ibm_is_instance" {
   name    = "terraform-test-instance"
   image   = "r010-28e8b4ba-6ab7-4af8-a01c-d9c38ccb3203"
   profile = "cx2-2x4"
