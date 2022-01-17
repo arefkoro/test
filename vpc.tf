@@ -13,7 +13,7 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-resource "ibm_is_vpc" "iac_test_vpc" {
+resource "ibm_is_vpc" {
   name = "terraform-test-vpc"
 }
 
