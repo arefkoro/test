@@ -13,10 +13,10 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-module "ibm_is_vpc" {
+module "ibm_is_vpc" "ibm_is_vpc" {
   source = "../../../Base/"
 }
 
-module "ibm_is_instance" {
+module "ibm_is_instance" "ibm_is_instance" {
   source = "../../../Base/"
 }
