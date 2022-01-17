@@ -13,7 +13,7 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-resource "ibm_is_instance" {
+resource "ibm_is_instance" "ibm_is_instance" {
   name    = "terraform-test-instance"
   image   = "r010-28e8b4ba-6ab7-4af8-a01c-d9c38ccb3203"
   profile = "cx2-2x4"
@@ -37,22 +37,22 @@ resource "ibm_is_instance" {
   tags = [ "iac-terraform-test" ]
 }
 
-output "ip_address" {
+output "ip_address" "ip_address" {
   value = ibm_is_instance.iac_test_instance.primary_network_interface[0].primary_ipv4_address
 }
 
-resource "ibm_is_floating_ip" {
+resource "ibm_is_floating_ip" "ibm_is_floating_ip" {
   name   = "terraform-test-ip"
   target = ibm_is_instance.iac_test_instance.primary_network_interface.0.id
   tags   = [ "iac-terraform-test" ]
 }
 
-resource "ibm_is_security_group" {
+resource "ibm_is_security_group" "ibm_is_security_group" {
   name = "terraform-test-sg-public"
   vpc  = ibm_is_vpc.iac_test_vpc.id
 }
 
-resource "ibm_is_security_group_rule" {
+resource "ibm_is_security_group_rule" "ibm_is_security_group_rule" {
   group     = ibm_is_security_group.iac_test_security_group.id
   direction = "inbound"
   tcp {
@@ -61,6 +61,6 @@ resource "ibm_is_security_group_rule" {
   }
 }
 
-output "ip_address_floating" {
+output "ip_address_floating" "ip_address_floating" {
   value = ibm_is_floating_ip.iac_test_floating_ip.address
 }
