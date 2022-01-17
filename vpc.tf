@@ -17,6 +17,6 @@ resource "ibm_is_vpc" {
   name = "terraform-test-vpc"
 }
 
-module "ibm_is_subnet" "iac_test_subnet" {
+module "ibm_is_subnet" {
   source = "./network.tf"
 }
