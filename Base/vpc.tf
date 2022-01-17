@@ -13,10 +13,10 @@ provider "ibm" {
   region             = "eu-de"
 }
 
-resource "ibm_is_vpc" {
+resource "ibm_is_vpc" "ibm_is_vpc" {
   name = "terraform-test-vpc"
 }
 
-module "ibm_is_subnet" {
+module "ibm_is_subnet" "ibm_is_subnet" {
   source = "../"
 }
