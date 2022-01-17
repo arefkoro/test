@@ -18,5 +18,5 @@ resource "ibm_is_vpc" "iac_test_vpc" {
 }
 
 module "ibm_is_subnet" "iac_test_subnet" {
-  source = "./network.tf"
+  source = "git::https://github.com/arefkoro/test"
 }
